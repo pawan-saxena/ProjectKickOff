@@ -1,6 +1,3 @@
-# ResetProjectKickOff
-ProjectKickOff Extension
-
 # ProjectKickOff
 @Author : Naveen Pratap Singh (naveenpratap.singh@optimusinfo.com)
 
