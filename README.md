@@ -1,7 +1,7 @@
 # ProjectKickOff
 @Author : Naveen Pratap Singh (naveenpratap.singh@optimusinfo.com)
 
-@contributor : Meenakshi Kumari 
+@contributor : Pawan Saxena (pawan.saxena@optimusinfo.com)
 
 @ProjectConfiguration : This application is deployed and tested in following environments :
  
