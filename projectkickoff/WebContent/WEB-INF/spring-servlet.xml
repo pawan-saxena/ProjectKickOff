@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+  
+<context:property-placeholder location="classpath:/resources/kickOff.properties"/> 
+<context:component-scan base-package="com.kickoff" />
+
+
+	  
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="${hibernate.driver}" />
+	<property name="url" value="${hibernate.url}" />
+	<property name="username" value="${hibernate.user}" />
+	<property name="password" value="${hibernate.pass}" />
+	</bean>
+		
+	 <bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" scope="singleton">
+	
+	  <property name="dataSource" ref="dataSource"/>
+   <property name="annotatedClasses">
+     <list>
+       <value>mypack.Project</value>    
+     </list>
+   </property>
+    <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+            <prop key="show_sql">${hibernate.show_sql}</prop>
+            
+         </props>
+      </property>
+	</bean>
+
+	
+ 	<bean id="database" class="com.database.DatabaseManagement" scope="singleton"> 
+ 	<property name="sessionFactory" ref="hibernateSessionFactory" /> 
+	</bean> 
+
+
+ 
+ 	
+<mvc:resources location="/resources/" mapping="/resources/**" />
+	 
+ <mvc:annotation-driven/>
+ 
+    <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    
+   <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+  <property name="host" value="smtp.gmail.com" />  
+  <property name="port" value="25"/>   
+    <property name="username" value="defaultoptimusinfo@gmail.com" />  
+    <property name="password" value="optimus@123" />  
+    <property name="javaMailProperties">  
+        <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props> 
+    </property>  
+</bean>
+ 
+</beans>

@@ -1,0 +1,2 @@
+Hello Name <br><br>
+The following Project that is created by User is verified by Person.

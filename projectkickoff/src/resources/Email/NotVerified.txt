@@ -1,0 +1,3 @@
+<br>
+Hello Name <br><br>
+User has created a new Project and details are as following: <br>
