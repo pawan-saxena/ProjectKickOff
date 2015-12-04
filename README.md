@@ -1,27 +1,36 @@
+# ResetProjectKickOff
+ProjectKickOff Extension
+
 # ProjectKickOff
 @Author : Naveen Pratap Singh (naveenpratap.singh@optimusinfo.com)
 
 @contributor : Pawan Saxena (pawan.saxena@optimusinfo.com)
 
-@ProjectConfiguration : This application is deployed and tested in following environments ; 
+@ProjectConfiguration : This application is deployed and tested in following environments :
+ 
  @Configuration 1 :
- JDK 1.8
- Apache Tomact 8
- Spring web-mvc 3.0
- jquery 1.11.2
+ 
+ JDK 1.8,
+ Apache Tomact 8,
+ Spring web-mvc 3.0,
+ jquery 1.11.2,
  jquery validation.js
+ 
  
  @Configuration 2 :
- JDK 1.7
- Apache Tomcat 7
- Spring web-mvc 3.0
- jquery 1.11.2
+ 
+ JDK 1.7,
+ Apache Tomcat 7,
+ Spring web-mvc 3.0,
+ jquery 1.11.2,
  jquery validation.js
  
+ 
  Browsers tested : 
- Chrome 46.0
- FireFox 42.0
- Internet Explorer 11.0
+ 
+ Chrome:46.0,
+ FireFox:42.0,
+ Internet:Explorer 11.0
  
  
 Notes : Kindly do make the following changes  in the source after cloning this project.
